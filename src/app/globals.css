@@ -8,6 +8,8 @@
   --color-navy-800: #0f2040;
   --color-navy-700: #152a52;
   --color-navy-600: #1e3a6e;
+  --font-heading: 'Montserrat', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
 * {
