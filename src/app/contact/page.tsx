@@ -27,8 +27,10 @@ export default function ContactPage() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    const data = new URLSearchParams({ "form-name": "contact", ...form });
+    await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: data.toString() });
     setSubmitted(true);
   }
 
@@ -73,7 +75,8 @@ export default function ContactPage() {
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
+                  <form name="contact" method="POST" data-netlify="true" onSubmit={handleSubmit} className="space-y-6">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-slate-300 text-sm font-medium mb-2" htmlFor="name">
