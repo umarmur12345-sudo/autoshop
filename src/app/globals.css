@@ -9,6 +9,8 @@
   --color-navy-700: #152a52;
   --color-navy-600: #1e3a6e;
   --color-gold: #f5a623;
+  --font-heading: 'Montserrat', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
 }
 
 * {
