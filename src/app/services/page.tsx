@@ -168,10 +168,12 @@ export default function ServicesPage() {
             <div
               key={service.id}
               id={service.id}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
+                index % 2 === 1 ? "lg:flex lg:flex-row-reverse" : ""
+              }`}
             >
               {/* Image */}
-              <div className={`relative h-72 md:h-96 rounded-2xl overflow-hidden ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+              <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
                 <Image
                   src={service.image}
                   alt={service.imageAlt}
